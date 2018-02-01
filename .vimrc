@@ -45,7 +45,7 @@ if dein#load_state('/Users/sheep/.cache/dein')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('simeji/winresizer')
   call dein#add('scrooloose/nerdtree')
-  
+
 simeji/winresizer
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -176,13 +176,13 @@ set clipboard=unnamed
 " 改行時にインデントを引き継いで改行する
 set autoindent
 " インデントにつかわれる空白の数
-set shiftwidth=4
+set shiftwidth=2
 " <Tab>押下時の空白数
-set softtabstop=4
+set softtabstop=2
 " <Tab>押下時に<Tab>ではなく、ホワイトスペースを挿入する
 set expandtab
 " <Tab>が対応する空白の数
-set tabstop=4
+set tabstop=2
 "ステータスバー表示"
 set laststatus=2
 "タブバーの表示"
@@ -192,6 +192,8 @@ set splitbelow
 set splitright
 " 行頭・行末の左右移動で行を移動する
 set whichwrap=b,s,h,l,<,>,[,]
+"" texのconcealを無効化（#^ω^）
+let g:tex_conceal=''
 
 " インクリメント、デクリメントを16進数にする(0x0とかにしなければ10進数です。007をインクリメントすると010になるのはデフォルト設定が8進数のため)
 set nf=hex
@@ -211,3 +213,36 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "nerdtreeの自動起動
 autocmd VimEnter * execute 'NERDTree'
+
+"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
+set nocompatible
+"カーソルを行頭，行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
+"BSで削除できるものを指定する
+" indent  : 行頭の空白
+" eol     : 改行
+" start   : 挿入モード開始位置より手前の文字
+set backspace=indent,eol,start
+" emmet keybind
+let g:user_emmet_leader_key='<c-y>'
+
+
+"neosnnippet keybind"
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"set snippet file dir
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
