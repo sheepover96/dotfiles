@@ -31,6 +31,8 @@ if dein#load_state('/Users/sheep/.cache/dein')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('tpope/vim-endwise')
   call dein#add('vim-scripts/Vim-R-plugin')
+  call dein#add('lervag/vimtex')
+  call dein#add('thinca/vim-quickrun')
   "call dein#add('Townk/vim-autoclose')
   call dein#add('osyo-manga/vim-monster')
   "windowsからの
@@ -246,3 +248,7 @@ endif
 
 "set snippet file dir
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+
+" ノーマルモード時だけ ; と : を入れ替える
+nnoremap ; :
+nnoremap : ;
