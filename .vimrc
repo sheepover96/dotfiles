@@ -5,10 +5,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/okuramaiki/.cache/dein/repos/github.com/Shougo/dein.vim " Required: if dein#load_state('/Users/okuramaiki/.cache/dein') call dein#begin('/Users/okuramaiki/.cache/dein') 
+set runtimepath+=/Users/sheep/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/sheep/.cache/dein')
+  call dein#begin('/Users/sheep/.cache/dein')
+
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/okuramaiki/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/sheep/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -19,10 +24,10 @@ set runtimepath+=/Users/okuramaiki/.cache/dein/repos/github.com/Shougo/dein.vim 
   call dein#add('vim-airline/vim-airline')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('Yggdroot/indentLine')
-  call dein#add('kien/ctrlp.vim')
+  call dein#add('ctripvim/ctrlp.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tyru/open-browser.vim')
-  call dein#add('accelerated-jk/plugin/accelerated-jk.vim')
+  call dein#add('rhysd/accelerrated-jk')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('tpope/vim-endwise')
   call dein#add('vim-scripts/Vim-R-plugin')
@@ -45,7 +50,7 @@ set runtimepath+=/Users/okuramaiki/.cache/dein/repos/github.com/Shougo/dein.vim 
 
 simeji/winresizer
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
   " Required:
   call dein#end()
@@ -62,7 +67,6 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
 " setting
 "文字コードをUFT-8に設定
 set encoding=utf-8
