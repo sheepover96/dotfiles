@@ -16,19 +16,19 @@ if dein#load_state('/Users/sheep/.cache/dein')
   call dein#add('/Users/sheep/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('jistr/vim-nerdtree-tabs')
   call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('vim-airline/vim-airline')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('Yggdroot/indentLine')
-  call dein#add('ctripvim/ctrlp.vim')
+  call dein#add('kien/ctrlp.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tyru/open-browser.vim')
-  call dein#add('rhysd/accelerrated-jk')
+  call dein#add('rhysd/accelerated-jk')
   call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('tpope/vim-endwise')
   call dein#add('vim-scripts/Vim-R-plugin')
   call dein#add('lervag/vimtex')
@@ -225,6 +225,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 " eol     : 改行
 " start   : 挿入モード開始位置より手前の文字
 set backspace=indent,eol,start
+set vb t_vb=
 " emmet keybind
 let g:user_emmet_leader_key='<c-y>'
 
