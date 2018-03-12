@@ -79,6 +79,10 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+#setting path for ruby
+
+PATH="usr/local/Cellar/ruby:$PATH"
+
 #Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
