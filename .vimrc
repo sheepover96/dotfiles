@@ -48,7 +48,6 @@ if dein#load_state('/Users/sheep/.cache/dein')
   call dein#add('simeji/winresizer')
   call dein#add('scrooloose/nerdtree')
 
-simeji/winresizer
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
@@ -228,7 +227,8 @@ set backspace=indent,eol,start
 set vb t_vb=
 " emmet keybind
 let g:user_emmet_leader_key='<c-y>'
-
+"SCSS high light
+au BufRead,BufNewFile *.scss set filetype=sass
 
 "neosnnippet keybind"
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -246,6 +246,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+"neocompleteを最初から
+let g:neocomplete#enable_at_startup = 1
 
 "set snippet file dir
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
