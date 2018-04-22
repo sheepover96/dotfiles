@@ -16,6 +16,7 @@ if dein#load_state('/Users/sheep/.cache/dein')
   call dein#add('/Users/sheep/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('davidhalter/jedi-vim')
   call dein#add('jistr/vim-nerdtree-tabs')
   call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('airblade/vim-gitgutter')
@@ -252,3 +253,16 @@ let g:neocomplete#enable_at_startup = 1
 
 "set snippet file dir
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+
+"jedi-vim"
+"1個目の候補が入力されるっていう設定を解除
+let g:jedi#popup_select_first = 0
+".を入力すると補完が始まるという設定を解除
+let g:jedi#popup_on_dot = 0
+autocmd FileType python setlocal completeopt-=preview
+"定義ジャンプ
+let g:jedi#goto_definitions_command = ""
+"leaderの設定
+:let mapleader = ","
+"分割
+let g:jedi#use_splits_not_buffers = "right"
