@@ -88,8 +88,18 @@ PATH="usr/local/Cellar/ruby:$PATH"
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
+#setting for golang, gopath
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
 export PATH="$HOME/.pyenv/shims:$PATH"
 
 export PGDATA=/usr/local/var/postgres
 
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# MacPorts Installer addition on 2014-09-25_at_18:39:26: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export MANPATH="/opt/local/man:$MANPATH"
+
