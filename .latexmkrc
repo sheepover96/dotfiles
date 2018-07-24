@@ -1,6 +1,6 @@
-$latex = 'platex -kanji=utf-8 -synctex=1 %S';
+$latex = 'latex -kanji=utf-8 -synctex=1 %S';
 $dvipdf = 'dvipdfmx %S';
-$bibtex = 'pbibtex';
+$bibtex = 'bibtex';
 $pdf_mode = 3; # use dvipdf
 $pdf_update_method = 2;
 $pdf_previewer = "start mupdf %O %S";

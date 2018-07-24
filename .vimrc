@@ -30,6 +30,7 @@ if dein#load_state('/Users/sheep/.cache/dein')
   call dein#add('rhysd/accelerated-jk')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('tpope/vim-endwise')
+  call dein#add('davidhalter/jedi-vim')
   call dein#add('vim-scripts/Vim-R-plugin')
   call dein#add('lervag/vimtex')
   call dein#add('thinca/vim-quickrun')
@@ -112,9 +113,9 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 
 " 検索系
@@ -177,13 +178,13 @@ set clipboard=unnamed
 " 改行時にインデントを引き継いで改行する
 set autoindent
 " インデントにつかわれる空白の数
-set shiftwidth=2
+set shiftwidth=4
 " <Tab>押下時の空白数
-set softtabstop=2
+set softtabstop=4
 " <Tab>押下時に<Tab>ではなく、ホワイトスペースを挿入する
 set expandtab
 " <Tab>が対応する空白の数
-set tabstop=2
+set tabstop=4
 "ステータスバー表示"
 set laststatus=2
 "タブバーの表示"
@@ -259,3 +260,16 @@ nnoremap : ;
 "go path
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
+
+"jedi-vim"
+"1個目の候補が入力されるっていう設定を解除
+let g:jedi#popup_select_first = 0
+".を入力すると補完が始まるという設定を解除
+let g:jedi#popup_on_dot = 0
+autocmd FileType python setlocal completeopt-=preview
+"定義ジャンプ
+let g:jedi#goto_definitions_command = ""
+"leaderの設定
+:let mapleader = ","
+"分割
+let g:jedi#use_splits_not_buffers = "right"
