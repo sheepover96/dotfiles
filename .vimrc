@@ -266,3 +266,7 @@ let g:jedi#goto_definitions_command = ""
 :let mapleader = ","
 "分割
 let g:jedi#use_splits_not_buffers = "right"
+
+"json
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
